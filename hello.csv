@@ -1,10 +1,10 @@
-Used For,GPIO,Cobbler,,Cobbler,GPIO,Used For
-LEDheartbeat.py:PIN,7,CE1,T Cobbler,P0,17,
-pirsensor.py:LED,8,CE0,,P1,18,roomtemp.py:DHT_PIN
-pirsensor.py:BUZZER,11,SCLK,,P2,27,lirc_out
-pirsensor.py:STATE_LED,9,MISO,,P3,22,off-button.py:PIN
-light-sensor.py:PIN,10,MOSI,,P4,23,checkmail.py:BUTTON
-,15,RXD,,P5,24,checkmail.py:MAIL_LED
-,14,TXD,,P6,25,act_led
-I2C Clock / power_up,3,SCL,,P7,4,1-wire
-I2C Data,2,SDA,,GND,GND,
+Used For,GPIO,Cobbler,Cobbler,GPIO,Used For
+LEDheartbeat.py:PIN,7,CE1,P0,17,
+pirsensor.py:LED,8,CE0,P1,18,roomtemp.py:DHT_PIN
+pirsensor.py:BUZZER,11,SCLK,P2,27,lirc_out
+pirsensor.py:STATE_LED,9,MISO,P3,22,off-button.py:PIN
+light-sensor.py:PIN,10,MOSI,P4,23,checkmail.py:BUTTON
+,15,RXD,P5,24,checkmail.py:MAIL_LED
+,14,TXD,P6,25,act_led
+I2C Clock / power_up,3,SCL,P7,4,1-wire
+I2C Data,2,SDA,GND,GND,
