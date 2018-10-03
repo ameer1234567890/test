@@ -4,5 +4,5 @@ while true; do
   git add .
   git diff-index --quiet HEAD -- || git commit --no-gpg-sign -m 'Feed fixed' && git push
   echo "Sleeping for half an hour"
-  sleep 10
+  sleep 1m
 done
