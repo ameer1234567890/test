@@ -25,13 +25,14 @@ PART1=$(cat <<'END_HEREDOC'
 Description=Custom service
 After=network.target
 [Service]
-Environment=VIRTUAL_ENV=/home/pi/pi-scripts/env
-WorkingDirectory=/home/pi/pi-scripts
-ExecStart=/usr/bin/sudo /home/pi/pi-scripts/env/bin/python3 /home/pi/pi-scripts/
+User=pi
+WorkingDirectory=/home/pi/mirafeed
+ExecStart=/home/pi/mirafeed/
 END_HEREDOC
 )
 
 PART2=$(cat <<'END_HEREDOC'
+
 # we may not have network yet, so retry until success
 Restart=on-failure
 RestartSec=3s
