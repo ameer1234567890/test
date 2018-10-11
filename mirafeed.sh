@@ -1,12 +1,13 @@
 #!/bin/sh
+maker_key="$(cat /home/pi/.maker_key)"
 while true; do
   ./mirafeed
   git add .
   git diff-index --quiet HEAD -- || git commit --no-gpg-sign -m 'Feed fixed' && git push
-  result="$(./feedvalidator/src/demo.py https://ameer.io/test/FixedFeed.rss | grep -v Validating | grep -v guid)"
+  result="$(./feedvalidator/src/demo.py https://ameer.io/test/FixedFeed.rss | grep -v Validating | grep -v gguid)"
   if [ "$result" != "" ]; then
     echo "Errors detected in feed!"
-    curl --data-urlencode "value1=$result" https://maker.ifttt.com/trigger/mirafeed_error/with/key/hAVKuiLxTZFFNyiGtd1FubyVsOwTOHzWzJocBA0dCJs
+    curl --data-urlencode "value1=$result" https://maker.ifttt.com/trigger/mirafeed_error/with/key/"$maker_key"
   fi
   echo ""
   echo "Sleeping for half an hour"
