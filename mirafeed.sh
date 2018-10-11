@@ -4,7 +4,7 @@ while true; do
   ./mirafeed
   git add .
   git diff-index --quiet HEAD -- || git commit --no-gpg-sign -m 'Feed fixed' && git push
-  result="$(./feedvalidator/src/demo.py https://ameer.io/test/FixedFeed.rss | grep -v Validating | grep -v gguid)"
+  result="$(./feedvalidator/src/demo.py https://ameer.io/test/FixedFeed.rss | grep -v Validating | grep -v guid)"
   if [ "$result" != "" ]; then
     echo "Errors detected in feed!"
     curl --data-urlencode "value1=$result" https://maker.ifttt.com/trigger/mirafeed_error/with/key/"$maker_key"
