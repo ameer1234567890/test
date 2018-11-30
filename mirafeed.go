@@ -19,7 +19,7 @@ var (
 	newLine   string
 )
 
-func DoReplacements() {
+func doReplacements() {
 	fmt.Println("Performing replacements...")
 
 	// For replacing pubDate
@@ -129,7 +129,7 @@ func addLineBreaks() {
 	writer.Write(re.ReplaceAll(b, []byte(repl)))
 }
 
-func SaveFeedToFile() {
+func saveFeedToFile() {
 	fmt.Println("Saving feed to file...")
 	url := "https://www.mira.gov.mv/MIRAFeed.aspx"
 	response, e := http.Get(url)
@@ -149,7 +149,7 @@ func SaveFeedToFile() {
 }
 
 func main() {
-	SaveFeedToFile()
+	saveFeedToFile()
 	addLineBreaks()
-	DoReplacements()
+	doReplacements()
 }
